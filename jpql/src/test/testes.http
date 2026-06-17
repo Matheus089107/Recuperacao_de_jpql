@@ -1,0 +1,63 @@
+POST http://localhost:8080/api/projetos
+Content-Type: application/json
+
+{
+  "nome": "Meu Primeiro Projeto"
+}
+
+###
+
+POST http://localhost:8080/api/tarefas
+Content-Type: application/json
+
+{
+  "titulo": "Minha primeira tarefa",
+  "descricao": "Terminar a API",
+  "projetoId": 1
+}
+
+###
+
+GET http://localhost:8080/api/projetos
+
+###
+
+GET http://localhost:8080/api/tarefas
+
+###
+
+PUT http://localhost:8080/api/tarefas/1
+Content-Type: application/json
+
+{
+  "titulo": "Tarefa com Custo Atualizado",
+  "codigo": "TAR-999",
+  "custo": 150.50
+}
+
+###
+
+PUT http://localhost:8080/api/projetos/1
+Content-Type: application/json
+
+{
+  "nome": "Nome do Projeto Totalmente Alterado"
+}
+
+### Buscar Projeto por ID
+GET http://localhost:8080/api/projetos/1
+
+### Buscar Tarefa por ID
+GET http://localhost:8080/api/tarefas/1
+###
+### Listar Tarefas de um Projeto Específico (JOIN + JPQL)
+GET http://localhost:8080/api/projetos/1/tarefas
+###
+### Relatório Avançado (Native Query)
+GET http://localhost:8080/api/tarefas/relatorio
+###
+DELETE http://localhost:8080/api/projetos/1
+
+###
+
+DELETE http://localhost:8080/api/tarefas/1
